@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>IndiCar</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+        :root {
+            --header-height: 3.5rem;
+            --first-color: hsl(38, 69%, 59%);
+            --text-color: hsl(38, 8%, 8%);
+            --body-font: 'Space Grotesk', sans-serif;
+            --biggest-font-size: 2.375rem;
+            --normal-font-size: .938rem;
+            --smaller-font-size: .75rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            :root {
+                --biggest-font-size: 5rem;
+                --normal-font-size: 1rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1.5rem;
+           
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            
+        }
+
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo, 
+        .nav__toggle {
+            color: var(--text-color);
+            display: inline-flex;
+        }
+
+        .nav__logo {
+            font-weight: 700;
+        }
+
+        .nav__toggle {
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 767px) {
+            .nav__menu {
+                position: fixed;
+                background-color: var(--first-color);
+                left: 0;
+                top: -100%;
+                width: 100%;
+                padding: 5rem 0 4rem;
+                border-radius: 0 0 1.5rem 1.5rem;
+                box-shadow: 0 2px 4px hsla(38, 4%, 15%, .15);
+                transition: .4s;
+            }
+        }
+
+        .nav__list {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+
+        .nav__link {
+            color: var(--text-color);
+        }
+
+        .nav__close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .show-menu {
+            top: 0;
+        }
+
+        @media screen and (max-width: 320px) {
+            .home {
+                padding-top: 7rem;
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .nav {
+                height: calc(var(--header-height) + 1.5rem);
+            }
+            .nav__toggle, 
+            .nav__close {
+                display: none;
+            }
+            .nav__list {
+                flex-direction: row;
+                column-gap: 3.5rem;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .home__container {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                column-gap: 2rem;
+            }
+            .home__data {
+                text-align: initial;
+            }
+            .home__img img {
+                width: 400px;
+            }
+            .home__shadow {
+                width: 250px;
+                height: 40px;
+            }
+        }
+
+        @media screen and (min-width: 1048px) {
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media screen and (min-width: 2048px) {
+            body {
+                zoom: 1.7;
+            }
+            .home {
+                height: initial;
+                row-gap: 4rem;
+            }
+        }
+
+        @media screen and (min-width: 3840px) {
+            body {
+                zoom: 3.1;
+            }
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .card {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card-title img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .card-title h3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .card button {
+            background-color: var(--first-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #e5a505;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .popup-content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .popup-content p {
+            margin-bottom: 2rem;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5f5f;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.5rem;
+        }
+
+        .popup-close:hover {
+            background-color: #ff3c3c;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="/index.html" class="nav__logo">INDI <span style="color: #f3d006;">CAR </span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/quemSomos.html" class="nav__link">Quem Somos</a></li>
+                    <li class="nav__item"><a href="/patio.html" class="nav__link">Pátio</a></li>
+                    <li class="nav__item"><a href="https://linktr.ee/indicar.df" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class='bx bx-menu'></i></div>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="cards-container" style="margin-top: 5rem;">
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/chevrolet2.png" alt="Logo">
+                    <h3>ONIX JOY 2019 </h3>
+                </div>
+                <img src="img/onix/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('ONIX JOY 1.0 MANUAL', '🚘 Modelo: ONIX JOY 1.0 MANUAL <br>🗓 Ano/ modelo: 2019/2019 <br>⛽ Combustível: Flex <br>', ['img/onix/2.jpeg',
+                'img/onix/3.jpeg','img/onix/3.jpeg','img/onix/5.jpeg', 'img/onix/6.jpeg', 'img/onix/7.jpeg','img/onix/8.jpeg','img/onix/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/citroen2.png" alt="Logo">
+                    <h3>C4 CACTUS 2022</h3>
+                </div>
+                <img src="img/C4/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('C4 CACTUS 1.6 AUTOMÁTICO', '🚘 Modelo: 1.6 AUTOMÁTICO <br>🗓 Ano/ modelo: 2022/2022 <br>⛽ Combustível: Flex <br>', ['img/C4/2.jpeg',
+                'img/C4/3.jpeg','img/C4/4.jpeg','img/C4/5.jpeg', 'img/C4/6.jpeg', 'img/C4/7.jpeg','img/C4/8.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>ARGO 2022 </h3>
+                </div>
+                <img src="img/argoPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('ARGO 1.0 MANUAL', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2022/2022 <br>⛽ Combustível: Flex <br>', ['img/argoPreto/2.jpeg',
+              'img/argoPreto/2.jpeg','img/argoPreto/3.jpeg','img/argoPreto/4.jpeg', 'img/argoPreto/5.jpeg', 'img/argoPreto/6.jpeg','img/argoPreto/7.jpeg',
+              'img/argoPreto/8.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>ARGO 2019 </h3>
+                </div>
+                <img src="img/argoVermelho/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('ARGO 1.0 MANUAL', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2022/2022 <br>⛽ Combustível: Flex <br>', ['img/argoVermelho/2.jpeg',
+                'img/argoVermelho/3.jpeg','img/argoVermelho/4.jpeg','img/argoVermelho/5.jpeg', 'img/argoVermelho/6.jpeg', 'img/argoVermelho/7.jpeg',
+                'img/argoVermelho/8.jpeg', 'img/argoVermelho/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>DOBLÔ ESSENCE 2019 </h3>
+                </div>
+                <img src="img/doblo/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('DOBLÔ ESSENCE 1.0 MANUAL', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2018/2019 <br>⛽ Combustível: Flex <br>', ['img/doblo/2.jpeg',
+                'img/doblo/3.jpeg','img/doblo/4.jpeg','img/doblo/5.jpeg', 'img/doblo/6.jpeg', 'img/doblo/7.jpeg','img/doblo/8.jpeg',
+                'img/doblo/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>GRAND SIENA 2021</h3>
+                </div>
+                <img src="img/sienaPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('GRAND SIENA 1.0 MANUAL', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2021/2022 <br>⛽ Combustível: Flex <br>', ['img/sienaPreto/2.jpeg',
+                'img/sienaPreto/3.jpeg','img/sienaPreto/4.jpeg','img/sienaPreto/5.jpeg', 'img/sienaPreto/6.jpeg', 'img/sienaPreto/7.jpeg','img/sienaPreto/8.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>STRADA WORKING 2015</h3>
+                </div>
+                <img src="img/stradaPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('STRADA WORKING CD 1.4 MANUAL', '🚘 Modelo: 1.4 MANUAL <br>🗓 Ano/ modelo: 2015/2015 <br>⛽ Combustível: Flex <br>', ['img/stradaPreto/2.jpeg',
+                'img/stradaPreto/3.jpeg','img/stradaPreto/4.jpeg','img/stradaPreto/5.jpeg', 'img/stradaPreto/6.jpeg', 'img/stradaPreto/7.jpeg','img/stradaPreto/8.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/ford.jpeg" alt="Logo">
+                    <h3> KA SE PLUS 2021</h3>
+                </div>
+                <img src="img/kaPlusPrata/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup(' KA SE PLUS ', '🚘 Modelo: 1.5 MANUAL COM MULTIMÍDIA <br>🗓 Ano/ modelo: 2020/2021 <br>⛽ Combustível: Flex <br>', ['img/kaPlusPrata/2.jpeg',
+                'img/kaPlusPrata/3.jpeg','img/kaPlusPrata/4.jpeg','img/kaPlusPrata/5.jpeg', 'img/kaPlusPrata/6.jpeg', 'img/kaPlusPrata/7.jpeg','img/kaPlusPrata/8.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/honda2.png" alt="Logo">
+                    <h3>CIVIC EX 2017 </h3>
+                </div>
+                <img src="img/civicPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('CIVIC EX ', '🚘 Modelo: 2.0 AUTOMÁTICO <br>🗓 Ano/ modelo: 2017/2017 <br>⛽ Combustível: Flex <br>', ['img/civicPreto/2.jpeg',
+                'img/civicPreto/3.jpeg','img/civicPreto/4.jpeg','img/civicPreto/5.jpeg', 'img/civicPreto/6.jpeg', 'img/civicPreto/7.jpeg',
+                'img/civicPreto/8.jpeg', 'img/civicPreto/9.jpeg', 'img/civicPreto/10.jpeg', 'img/civicPreto/11.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/honda2.png" alt="Logo">
+                    <h3>FIT LX 1.5 2016</h3>
+                </div>
+                <img src="img/fitCinza/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('FIT LX 1.5', '🚘 Modelo: 1.5  <br>🗓 Ano/ modelo: 2015/2016 <br>⛽ Combustível: Flex <br>', ['img/fitCinza/2.jpeg',
+                'img/fitCinza/3.jpeg','img/fitCinza/4.jpeg','img/fitCinza/5.jpeg', 'img/fitCinza/6.jpeg', 'img/fitCinza/7.jpeg','img/fitCinza/8.jpeg', 
+                'img/fitCinza/9.jpeg', 'img/fitCinza/10.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/HYUNDAI.jpeg" alt="Logo">
+                    <h3>HB20 COMFORT 2023</h3>
+                </div>
+                <img src="img/hb20Prata/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('HB20 COMFORT ', '🚘 Modelo: 1.0 MANUAL COM MULTIMÍDIA <br>🗓 Ano/ modelo: 2022/2023 <br>⛽ Combustível: Flex <br>', ['img/hb20Prata/1.1.jpeg',
+                'img/hb20Prata/3.jpeg','img/hb20Prata/4.jpeg','img/hb20Prata/5.jpeg', 'img/hb20Prata/6.jpeg', 'img/hb20Prata/7.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/NISSAN.jpeg" alt="Logo">
+                    <h3> TIIDA 2012</h3>
+                </div>
+                <img src="img/tiidaPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup(' TIIDA 1.8 MANUAL', '🚘 Modelo: 1.8 MANUAL <br>🗓 Ano/ modelo: 2011/2012 <br>⛽ Combustível: Flex <br>', ['img/tiidaPreto/2.jpeg',
+                'img/tiidaPreto/3.jpeg','img/tiidaPreto/4.jpeg','img/tiidaPreto/5.jpeg', 'img/tiidaPreto/6.jpeg', 'img/tiidaPreto/7.jpeg',
+                'img/tiidaPreto/8.jpeg', 'img/tiidaPreto/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/NISSAN.jpeg" alt="Logo">
+                    <h3>VERSA SL 2018</h3>
+                </div>
+                <img src="img/versa/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('VERSA SL 1.6 AUTOMÁTICO', '🚘 Modelo: 1.6 AUTOMÁTICO <br>🗓 Ano/ modelo: 2017/2018 <br>⛽ Combustível: Flex <br>', ['img/versa/2.jpeg',
+                'img/versa/3.jpeg','img/versa/4.jpeg','img/versa/5.jpeg', 'img/versa/6.jpeg', 'img/versa/7.jpeg','img/versa/8.jpeg', 'img/versa/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/toyota.png" alt="Logo">
+                    <h3>COROLLA XEI 2009</h3>
+                </div>
+                <img src="img/corolaPrata/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('COROLLA XEI 1.8 AUTOMÁTICO', '🚘 Modelo: 1.8 AUTOMÁTICO  <br>🗓 Ano/ modelo: 2009/2009 <br>⛽ Combustível: Flex <br>', ['img/corolaPrata/2.jpeg',
+                'img/corolaPrata/3.jpeg','img/corolaPrata/4.jpeg','img/corolaPrata/5.jpeg', 'img/corolaPrata/6.jpeg', 'img/corolaPrata/7.jpeg',
+                'img/corolaPrata/8.jpeg', 'img/corolaPrata/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>FOX CONNECT 2018</h3>
+                </div>
+                <img src="img/voyageVermelho/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('FOX CONNECT 1.6 MANUAL', '🚘 Modelo: 1.6 MANUAL <br>🗓 Ano/ modelo: 2018/2018 <br>⛽ Combustível: Flex <br>', ['img/corolaPrata/1.jpeg',
+                'img/corolaPrata/2.jpeg','img/corolaPrata/3.jpeg','img/corolaPrata/4.jpeg', 'img/corolaPrata/5.jpeg', 'img/corolaPrata/6.jpeg',
+                'img/corolaPrata/7.jpeg', 'img/corolaPrata/8.jpeg', 'img/corolaPrata/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>POLO 2020</h3>
+                </div>
+                <img src="img/poloCinza/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('POLO 1.0 MANUAL', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo:  2020/2020 <br>⛽ Combustível: Flex <br>', ['img/poloCinza/2.jpeg',
+                'img/poloCinza/3.jpeg','img/poloCinza/4.jpeg','img/poloCinza/5.jpeg', 'img/poloCinza/6.jpeg', 'img/poloCinza/7.jpeg',
+                'img/poloCinza/8.jpeg', 'img/poloCinza/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>POLO COMFORT 2014</h3>
+                </div>
+                <img src="img/poloConfortPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('POLO COMFORT ', '🚘 Modelo: 1.6 MANUAL <br>🗓 Ano/ modelo: 2013/2014 <br>⛽ Combustível: Flex <br>', ['img/poloConfortPreto/2.jpeg',
+                'img/poloConfortPreto/3.jpeg','img/poloConfortPreto/4.jpeg','img/poloConfortPreto/5.jpeg', 'img/poloConfortPreto/6.jpeg',
+                 'img/poloConfortPreto/7.jpeg','img/poloConfortPreto/8.jpeg', 'img/poloConfortPreto/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>UP TAKE 2015 </h3>
+                </div>
+                <img src="img/poloConfortPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('UP TAKE ', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2014/2015 <br>⛽ Combustível: Flex <br>', ['img/poloConfortPreto/2.jpeg',
+                'img/poloConfortPreto/3.jpeg','img/poloConfortPreto/4.jpeg','img/poloConfortPreto/5.jpeg', 'img/poloConfortPreto/6.jpeg',
+                 'img/poloConfortPreto/7.jpeg','img/poloConfortPreto/8.jpeg', 'img/poloConfortPreto/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>VOYAGE 2023</h3>
+                </div>
+                <img src="img/voyagePrata/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('VOYAGE ', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2022/2023 <br>⛽ Combustível: Flex <br>', ['img/voyagePrata/2.jpeg',
+                'img/upPreto/3.jpeg','img/upPreto/4.jpeg','img/upPreto/5.jpeg', 'img/upPreto/6.jpeg', 'img/upPreto/7.jpeg',
+                'img/upPreto/8.jpeg', 'img/upPreto/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card">                  
+                <div class="card-title">
+                    <img src="img/volkswagen.png" alt="Logo">
+                    <h3>VOYAGE 2014</h3>
+                </div>
+                <img src="img/voyageVermelho/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('VOYAGE', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo: 2013/2014 <br>⛽ Combustível: Flex <br>', ['img/voyageVermelho/2.jpeg',
+                'img/voyageVermelho/3.jpeg','img/voyageVermelho/4.jpeg','img/voyageVermelho/5.jpeg', 'img/voyageVermelho/6.jpeg', 'img/voyageVermelho/7.jpeg',
+                'img/voyageVermelho/8.jpeg', 'img/voyageVermelho/9.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+             
+            
+
+        </section>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button id="popup-close" class="popup-close">×</button>
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+            <div id="popup-carousel" class="carousel"></div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(title, description, images) {
+            const popup = document.getElementById('popup');
+            const popupTitle = document.getElementById('popup-title');
+            const popupDescription = document.getElementById('popup-description');
+            const popupCarousel = document.getElementById('popup-carousel');
+
+            popupTitle.textContent = title;
+            popupDescription.innerHTML = description;
+
+            popupCarousel.innerHTML = '';
+
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = title;
+                popupCarousel.appendChild(imgElement);
+            });
+
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('popup-close').addEventListener('click', closePopup);
+
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
