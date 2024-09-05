@@ -1,83 +1,124 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <title>IndiCar</title>
-    </head>
-    <body>
-        <header class="header">
-            <nav class="nav container">
-                <a href="/index.html" class="nav__logo">
-                    INDI   <span style="color: rgb(255, 255, 4);">CAR </span>     
-                </a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>IndiCar</title>
+</head>
+<body>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="/quemSomos.html" class="nav__link">Quem Somos</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="/patio.html" class="nav__link">Pátio</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="https://linktr.ee/indicar.df" class="nav__link">Contato</a>
-                        </li>
-                    </ul>
+    <header>
+        <div class="office-hours">
+            <p>Horário de atendimento: Seg a sex - 8h às 18h | Sáb - 8h às 18h</p>
+        </div>
 
-                    <div class="nav__close" id="nav-close">
-                        <i class='bx bx-x'></i>
-                    </div>
-                </div>
+        <section class="nav-bar">
+            <div class="logo">
+                <img src="/img/logoIndicar.png" alt="Logo">
+            </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-grid-alt'></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="main">
-            <section class="home">
-                <div class="home__container container">
-                    <div class="home__data">
-                        
-                        <h1 class="home__title">IndiCar</h1>
-                        <p class="home__description">
-                            Seja comprar, vender ou trocar<br> Vem pra IndiCar!
-                        </p>
-                        <a href="/patio.html" class="home__button">
-                            Nosso Pátio
-                        </a>
-                    </div>
-
-                    <div class="home__img">
-                        <img src="img/car.png" alt="">
-                        <div class="home__shadow"></div>
-                    </div>
-                </div>
-
-                <footer class="home__footer" style="display: flex; flex-direction: column; align-items: center; position: fixed; bottom: 0; width: 100%; background-color: hsla(38, 70%, 63%, 0.952);; padding: 10px 0;">
-                    <img src="img/instagram.png" alt="instagram icon" style="margin-bottom: 5px;">
-                    
-                    <a href="https://www.instagram.com/indicar.df/" style="color: #333; text-decoration: none; margin-bottom: 5px;">
-                        <span>indicar.df</span>
-                    </a>
-                
-                    <span class="divider" style="width: 100%; height: 1px; background-color: #ccc; margin: 5px 0;"></span>
-                    
-                    <p class="link licence" style="color: #6d6b6b; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 12px; text-align: center; margin: 0;">
-                        <a href="link-para-o-repositório" style="color: #6d6b6b; text-decoration: none;">MIT License</a> 
-                        Copyright (c) 2022 Bedimcode. By Daniele.
-                    </p>
-                </footer>
-                
-            </section>
-        </main>
-
+            <ul>
+                <li><a href="/patio.html">ESTOQUE</a></li>
+                <li><a href="/quemSomos.html">SOBRE</a></li>
+                <li><a href="/vendas.html">VENDAS</a></li>
+            </ul>
+        </section>
         
-        <script src="assets/js/scrollreveal.min.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+    </header>
+
+    <main>
+        <div class="main-img">
+            <img src="img/banner5.png" alt="" class="active">
+            <img src="img/banner5.png" alt="">
+            <img src="img/banner5.png" alt="">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <div class="icons">  
+            <a href="#" onclick="filterCars('Chevrolet')">Chevrolet</a>
+            <a href="#" onclick="filterCars('Fiat')">Fiat</a>
+            <a href="#" onclick="filterCars('Renault')">Renault</a>
+            <a href="#" onclick="filterCars('Ford')">Ford</a>
+            <a href="#" onclick="filterCars('Nissan')">Nissan</a>
+            <a href="#" onclick="filterCars('Toyota')">Toyota</a>
+            <a href="#" onclick="filterCars('Honda')">Honda</a>
+            <a href="#" onclick="filterCars('Hyundai')">Hyundai</a>
+            <a href="#" onclick="filterCars('Volkswagen')">Volkswagen</a>
+            <a href="#" onclick="filterCars('Citroën')">Citroën</a>
+        </div>
+        
+        
+        
+    </main>
+
+    <footer>
+
+        <section class="instagram">
+            <div >
+                <img src="img/instagram-img.jpeg" alt="">              
+            </div>
+
+            <div>
+                <p>NOS SIGA NO <br> <span style="color: blue;"><strong>INSTAGRAM</strong></span> <br> E ACOMPANHE NOSSAS <br> OFERTAS E NOVIDADES <br> <br> <a href="https://www.instagram.com/indicar.df/"><small>@indicar.df</small></a>
+            </div>
+
+        </section>
+
+
+        <section class="contact">
+            <div class="map">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239.95297681701305!2d-47.973298560032134!3d-15.790891585454366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a311039cd03ed%3A0xee7df35369d066d7!2s704%20Ve%C3%ADculos%20-%20Loja%2001!5e0!3m2!1spt-BR!2sbr!4v1725555738747!5m2!1spt-BR!2sbr" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>            </div>
+            
+            <div class="adress"> <strong>INDICAR VEÍCULOS</strong>  <br>📍SCIA QD 15, CONJ 7, LOTE 12 <br> CIDADE DO AUTOMÓVEL-DF</div>
+        </section>
+    </footer>
+
+</body>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.main-img img');
+    const totalImages = images.length;
+
+    document.querySelector('.next').addEventListener('click', showNextImage);
+    document.querySelector('.prev').addEventListener('click', showPrevImage);
+
+    function showNextImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add('active');
+    }
+
+    function showPrevImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        images[currentIndex].classList.add('active');
+    }
+
+    function autoPlay() {
+        showNextImage();
+    }
+
+    setInterval(autoPlay, 5000); // Altere as imagens a cada 5 segundos
+
+
+    function filterCars(brand) {
+            localStorage.setItem('selectedBrand', brand);
+            window.location.href = 'patio.html';
+        }
+
+
+</script>
+
 </html>
+
