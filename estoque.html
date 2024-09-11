@@ -18,6 +18,9 @@
     --biggest-font-size: 2.375rem;
     --normal-font-size: .938rem;
     --smaller-font-size: .75rem;
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 30px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -311,12 +314,13 @@ img {
 <body>
     <header class="header">
         <nav class="nav container">
-            <a href="/index.html" class="nav__logo">INDI <span style="color:  rgba(241, 191, 24, 0.952);">CAR </span></a>              
+            <a href="/index.html" class="nav__logo">INDI <span style="color: rgba(241, 191, 24, 0.952);">CAR </span></a>              
         </nav>
     </header>
     <main class="container">
         <section class="cards-container" style="margin-top: 5rem;">
 
+            
             <div class="card" data-brand="Chevrolet">                  
                 <div class="card-title">
                     <img src="img/gm-chevrolet.png" alt="Logo">
@@ -575,10 +579,7 @@ img {
             </div>
         </div>
         
-        
-        <div id="no-cars-message" style="display:none; text-align:center; margin-top: 2rem; color: red; font-weight: bold;">
-            Nenhum carro disponível para a marca selecionada.
-        </div>
+       
     </main>
 
     <script>
@@ -604,38 +605,6 @@ img {
 
 
 
-        
-    
-        function filterCards(brand) {
-        const cards = document.querySelectorAll('.card');
-        let hasCars = false;
-
-        
-        cards.forEach(card => {
-            if (card.getAttribute('data-brand') === brand) {
-                card.style.display = 'block';
-                hasCars = true;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        
-        const noCarsMessage = document.getElementById('no-cars-message');
-        if (hasCars) {
-            noCarsMessage.style.display = 'none';
-        } else {
-            noCarsMessage.style.display = 'block';
-        }
-    }
-
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        const selectedBrand = localStorage.getItem('selectedBrand');
-        if (selectedBrand) {
-            filterCards(selectedBrand);  
-        }
-    });
 </script>
 
 </body>

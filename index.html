@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +9,32 @@
 <body>
 
     <header>
-        <div class="office-hours">
-            <p>Horário de atendimento: Seg a sex - 8h às 18h | Sáb - 8h às 18h</p>
-        </div>
 
+        <div class="office-hours" style="color: white;">
+            <p> <strong>Horário de atendimento: Seg à Sáb - 8h às 18h</strong></p>
+        </div>
+        
         <section class="nav-bar">
             <div class="logo">
                 <img src="/img/logoIndicar.png" alt="Logo">
             </div>
 
             <ul>
-                <li><a href="/patio.html">ESTOQUE</a></li>
+                <li><a id="estoque-link" href="/estoque.html">ESTOQUE</a></li>
                 <li><a href="/quemSomos.html">SOBRE</a></li>
-                <li><a href="/vendas.html">VENDAS</a></li>
+                <li><a href="https://linktr.ee/indicar.df" target="_blank"  class="btn">CONTATO</a>
+
+                        
             </ul>
         </section>
+
+        
+   
         
     </header>
 
     <main>
+        
         <div class="main-img">
             <img src="img/banner5.png" alt="" class="active">
             <img src="img/banner5.png" alt="">
@@ -35,82 +42,311 @@
             <button class="prev">&#10094;</button>
             <button class="next">&#10095;</button>
         </div>
+        
+        <div class="icons-carousel">
+            <div class="carousel-track">
+                <a href="#" onclick="filterCars('Chevrolet')">
+                    <img src="img/gm-chevrolet.png" alt="Chevrolet Logo">
+                    <span>Chevrolet</span>
+                </a>
+                <a href="#" onclick="filterCars('Toyota')">
+                    <img src="img/toyota.png" alt="Toyota Logo">
+                    <span>Toyota</span>
+                </a>
+                <a href="#" onclick="filterCars('Fiat')">
+                    <img src="img/fiat.png" alt="Fiat Logo">
+                    <span>Fiat</span>
+                </a>
+                <a href="#" onclick="filterCars('Renault')">
+                    <img src="img/renault.png" alt="Renault Logo">
+                    <span>Renault</span>
+                </a>
+                                
+            <a href="#" onclick="filterCars('Ford')">
+                <img src="img/ford.png" alt="Chevrolet Logo">
+                <span>Ford</span>
+            </a>
+            <a href="#" onclick="filterCars('Volkswagen')">
+                <img src="img/vw-volkswagen.png" alt="Fiat Logo">
+                <span>Volkswagen</span>
+            </a>
 
-        <div class="icons">  
-            <a href="#" onclick="filterCars('Chevrolet')">Chevrolet</a>
-            <a href="#" onclick="filterCars('Fiat')">Fiat</a>
-            <a href="#" onclick="filterCars('Renault')">Renault</a>
-            <a href="#" onclick="filterCars('Ford')">Ford</a>
-            <a href="#" onclick="filterCars('Nissan')">Nissan</a>
-            <a href="#" onclick="filterCars('Toyota')">Toyota</a>
-            <a href="#" onclick="filterCars('Honda')">Honda</a>
-            <a href="#" onclick="filterCars('Hyundai')">Hyundai</a>
-            <a href="#" onclick="filterCars('Volkswagen')">Volkswagen</a>
-            <a href="#" onclick="filterCars('Citroën')">Citroën</a>
+            <a href="#" onclick="filterCars('Nissan')">
+                <img src="img/nissan.png" alt="Renault Logo">
+                <span>Nissan</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Peugeot')">
+                <img src="img/peugeot.png" alt="Renault Logo">
+                <span>Peugeot</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Citroën')">
+                <img src="img/citroen.png" alt="Renault Logo">
+                <span>Citroën</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Honda')">
+                <img src="img/honda.png" alt="Renault Logo">
+                <span>Honda</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Hyundai')">
+                <img src="img/hyundai.png" alt="Renault Logo">
+                <span>Hyundai</span>
+            </a>
+
+
+            <a href="#" onclick="filterCars('Audi')">
+                <img src="img/audi.png" alt="Renault Logo">
+                <span>Audi</span>
+            </a>
+
+            <a href="#" onclick="filterCars('BMW')">
+                <img src="img/bmw.png" alt="Renault Logo">
+                <span>BMW</span>
+            </a>
+
+            <a href="#" onclick="filterCars('BYD')">
+                <img src="img/byd.png" alt="Renault Logo">
+                <span>BYD</span>
+            </a>
+
+            <a href="#" onclick="filterCars('chery')">
+                <img src="img/chery.png" alt="Renault Logo">
+                <span>CHERY</span>
+            </a>
+
+           
+            <a href="#" onclick="filterCars('Jaguar')">
+                <img src="img/jaguar.png" alt="Renault Logo">
+                <span>Jaguar</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Jeep')">
+                <img src="img/jeep.png" alt="Renault Logo">
+                <span>Jeep</span>
+            </a>
+
+            <a href="#" onclick="filterCars('land-rover')">
+                <img src="img/land-rover.png" alt="Renault Logo">
+                <span>Land Rover</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Lexus')">
+                <img src="img/lexus.png" alt="Renault Logo">
+                <span>Lexus</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Mercedes')">
+                <img src="img/mercedes-benz.png" alt="Renault Logo">
+                <span>Mercedes</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Mini')">
+                <img src="img/mini.png" alt="Renault Logo">
+                <span>Mini</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Mitsubishi')">
+                <img src="img/mitsubishi.png" alt="Renault Logo">
+                <span>Mitsubishi</span>
+            </a>
+
+            
+            <a href="#" onclick="filterCars('Porsche')">
+                <img src="img/porsche.png" alt="Renault Logo">
+                <span>Porsche</span>
+            </a>
+
+            <a href="#" onclick="filterCars('super-soco')">
+                <img src="img/super-soco.png" alt="Renault Logo">
+                <span>SUPER SOCO</span>
+            </a>
+
+          
+            <a href="#" onclick="filterCars('Volvo')">
+                <img src="img/volvo.png" alt="Renault Logo">
+                <span>Volvo</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Yamaha')">
+                <img src="img/yamaha.png" alt="Renault Logo">
+                <span>YAMAHA</span>
+            </a>
+
+            <a href="#" onclick="filterCars('Chevrolet')">
+                <img src="img/gm-chevrolet.png" alt="Chevrolet Logo">
+                <span>Chevrolet</span>
+            </a>
+            <a href="#" onclick="filterCars('Toyota')">
+                <img src="img/toyota.png" alt="Toyota Logo">
+                <span>Toyota</span>
+            </a>
+            <a href="#" onclick="filterCars('Fiat')">
+                <img src="img/fiat.png" alt="Fiat Logo">
+                <span>Fiat</span>
+            </a>
+            <a href="#" onclick="filterCars('Renault')">
+                <img src="img/renault.png" alt="Renault Logo">
+                <span>Renault</span>
+            </a>
+                            
+        <a href="#" onclick="filterCars('Ford')">
+            <img src="img/ford.png" alt="Chevrolet Logo">
+            <span>Ford</span>
+        </a>
+        <a href="#" onclick="filterCars('Volkswagen')">
+            <img src="img/vw-volkswagen.png" alt="Fiat Logo">
+            <span>Volkswagen</span>
+        </a>
+
+        <a href="#" onclick="filterCars('Nissan')">
+            <img src="img/nissan.png" alt="Renault Logo">
+            <span>Nissan</span>
+        </a>
+
+        <a href="#" onclick="filterCars('Peugeot')">
+            <img src="img/peugeot.png" alt="Renault Logo">
+            <span>Peugeot</span>
+        </a>
+
+        <a href="#" onclick="filterCars('Citroën')">
+            <img src="img/citroen.png" alt="Renault Logo">
+            <span>Citroën</span>
+        </a>
+
+        <a href="#" onclick="filterCars('Honda')">
+            <img src="img/honda.png" alt="Renault Logo">
+            <span>Honda</span>
+        </a>
+
+        <a href="#" onclick="filterCars('Hyundai')">
+            <img src="img/hyundai.png" alt="Renault Logo">
+            <span>Hyundai</span>
+        </a>
+
+
+        <a href="#" onclick="filterCars('Audi')">
+            <img src="img/audi.png" alt="Renault Logo">
+            <span>Audi</span>
+        </a>
+
+
+
+
         </div>
         
         
         
     </main>
 
-    <footer>
+    
 
         <section class="instagram">
-            <div >
-                <img src="img/instagram-img.jpeg" alt="">              
-            </div>
-
             <div>
-                <p>NOS SIGA NO <br> <span style="color: blue;"><strong>INSTAGRAM</strong></span> <br> E ACOMPANHE NOSSAS <br> OFERTAS E NOVIDADES <br> <br> <a href="https://www.instagram.com/indicar.df/"><small>@indicar.df</small></a>
+                <img src="img/instagram-img.jpeg" alt="Instagram promotion image">              
             </div>
-
+        
+            <div class="icon-insta">
+                <p>
+                    NOS SIGA NO <br>
+                    <span style="color:  rgba(241, 191, 24, 0.952);"><strong>INSTAGRAM</strong></span> <br>
+                    E ACOMPANHE NOSSAS <br>
+                    OFERTAS E NOVIDADES <br><br> 
+                </p>
+        
+                <div class="logo-insta">
+                    <a href="https://www.instagram.com/indicar.df/" target="_blank">
+                        <img src="img/instagram.png" alt="Instagram Icon">
+                    </a>
+                </div>
+            </div>
         </section>
-
+        
+        
+        <footer>
 
         <section class="contact">
             <div class="map">
                 <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239.95297681701305!2d-47.973298560032134!3d-15.790891585454366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a311039cd03ed%3A0xee7df35369d066d7!2s704%20Ve%C3%ADculos%20-%20Loja%2001!5e0!3m2!1spt-BR!2sbr!4v1725555738747!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7678.677198435915!2d-47.98456070449562!3d-15.786090265197913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a39d3bb66bbab%3A0xbb50ec46ff88dfc3!2sINDICAR%20VEICULOS%20DF!5e0!3m2!1spt-BR!2sbr!4v1725968891378!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></src=>"
                 width="600" 
                 height="450" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
-            </iframe>            </div>
+                </iframe>            
+            </div>
             
-            <div class=""> <strong>INDICAR VEÍCULOS</strong>  <br>📍SCIA QD 15, CONJ 7, LOTE 12 <br> CIDADE DO AUTOMÓVEL-DF</div>
+            <div style="display: flex; flex-direction: column; align-items: start; "> 
+                <h3 style="color: rgb(99, 95, 95);">IndiCar Veículos </h3>
+                <br>
+                <p> 
+                    🕒 ATENDIMENTO: Seg à Sáb 08h - 18h <br>
+                    ☏ Sac: (61) 3686-7061 <br>
+                    ✉ vendas@indicardf.com <br>
+                    📍SCIA QD 15, CONJ 7, LOTE 12 <br> CIDADE DO AUTOMÓVEL-DF
+                </p>
+
+                <div class="whats" style="display: flex; flex-direction: row; gap: 10px; cursor: pointer; padding-bottom: 30px;">
+                    <p>WhatsApp: (61) 99508-8686</p>
+                    <a href="https://wa.me/5561995088686?text=Gostaria%20de%20falar%20com%20um%20vendedor%20" target="_blank"> 
+                        <img src="/img/whats.png" alt="whats-icon" style="width: 40px; height: auto;">                       
+                    </a>
+                </div>
+            </div>
+             
         </section>
+        <div class="dev">
+            <p><smal> © 2024 by Daniele <strong>♡</strong></smal></p>
+        </div>
     </footer>
 
 </body>
 
 <script>
     let currentIndex = 0;
-    const images = document.querySelectorAll('.main-img img');
-    const totalImages = images.length;
+const images = document.querySelectorAll('.main-img img');
+const totalImages = images.length;
+const intervalTime = 3000; 
 
-    document.querySelector('.next').addEventListener('click', showNextImage);
-    document.querySelector('.prev').addEventListener('click', showPrevImage);
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+}
 
-    function showNextImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % totalImages;
-        images[currentIndex].classList.add('active');
-    }
+function nextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showImage(currentIndex);
+}
 
-    function showPrevImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        images[currentIndex].classList.add('active');
-    }
+function prevImage() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    showImage(currentIndex);
+}
 
-    function autoPlay() {
-        showNextImage();
-    }
 
-    setInterval(autoPlay, 5000); // Altere as imagens a cada 5 segundos
+let autoSlide = setInterval(nextImage, intervalTime);
 
+
+document.querySelector('.next').addEventListener('click', () => {
+    clearInterval(autoSlide); 
+    nextImage();
+    autoSlide = setInterval(nextImage, intervalTime); 
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    clearInterval(autoSlide); 
+    prevImage();
+    autoSlide = setInterval(nextImage, intervalTime); 
+});
+   
 
     function filterCars(brand) {
             localStorage.setItem('selectedBrand', brand);
