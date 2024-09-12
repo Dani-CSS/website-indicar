@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: var(--body-font);
+    font-family: "Poppins", sans-serif;
     font-size: var(--normal-font-size);
     font-weight: 500;
     color: var(--text-color);
@@ -311,7 +311,7 @@ img {
 <body>
     <header class="header">
         <nav class="nav container">
-            <a href="/index.html" class="nav__logo">INDI <span style="color:  rgba(241, 191, 24, 0.952);">CAR </span></a>              
+            <a href="/index.html" class="nav__logo" style="font-family: var(--body-font);">INDI<span style="color: rgba(241, 191, 24, 0.952); font-family: var(--body-font);">CAR</span></a>
         </nav>
     </header>
     <main class="container">
@@ -636,6 +636,38 @@ img {
             filterCards(selectedBrand);  
         }
     });
+
+    const carousel = document.querySelector('.icons-carousel');
+const track = document.querySelector('.carousel-track');
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    carousel.classList.add('active');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = track.offsetLeft;
+});
+
+carousel.addEventListener('mouseleave', () => {
+    isDragging = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mouseup', () => {
+    isDragging = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2; // Ajuste a velocidade do arraste
+    track.style.transform = `translateX(${scrollLeft + walk}px)`;
+});
+
 </script>
 
 </body>

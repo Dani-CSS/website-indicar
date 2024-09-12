@@ -36,9 +36,9 @@
     <main>
         
         <div class="main-img">
-            <img src="img/banner5.png" alt="" class="active">
-            <img src="img/banner5.png" alt="">
-            <img src="img/banner5.png" alt="">
+            <img src="img/1.png" alt="" class="active">
+            <img src="img/3.png" alt="">
+            <img src="img/2.png" alt="">
             <button class="prev">&#10094;</button>
             <button class="next">&#10095;</button>
         </div>
@@ -291,7 +291,7 @@
                 </p>
 
                 <div class="whats" style="display: flex; flex-direction: row; gap: 10px; cursor: pointer; padding-bottom: 30px;">
-                    <p>WhatsApp: (61) 99508-8686</p>
+                    <p>WhatsApp: (61) 98482-2419</p>
                     <a href="https://wa.me/5561995088686?text=Gostaria%20de%20falar%20com%20um%20vendedor%20" target="_blank"> 
                         <img src="/img/whats.png" alt="whats-icon" style="width: 40px; height: auto;">                       
                     </a>
@@ -352,6 +352,39 @@ document.querySelector('.prev').addEventListener('click', () => {
             localStorage.setItem('selectedBrand', brand);
             window.location.href = 'patio.html';
         }
+
+
+        const carousel = document.querySelector('.icons-carousel');
+const track = document.querySelector('.carousel-track');
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    carousel.classList.add('active');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = track.offsetLeft;
+});
+
+carousel.addEventListener('mouseleave', () => {
+    isDragging = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mouseup', () => {
+    isDragging = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2; // Ajuste a velocidade do arraste
+    track.style.transform = `translateX(${scrollLeft + walk}px)`;
+});
+
 
 
 </script>
