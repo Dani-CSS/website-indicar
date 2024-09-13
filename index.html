@@ -39,6 +39,8 @@
             <img src="img/1.png" alt="" class="active">
             <img src="img/3.png" alt="">
             <img src="img/2.png" alt="">
+            <img src="img/4.png" alt="">
+            <img src="img/5.png" alt="">
             <button class="prev">&#10094;</button>
             <button class="next">&#10095;</button>
         </div>
@@ -354,36 +356,56 @@ document.querySelector('.prev').addEventListener('click', () => {
         }
 
 
-        const carousel = document.querySelector('.icons-carousel');
-const track = document.querySelector('.carousel-track');
-let isDragging = false;
+      
+
+
+        const carousel = document.querySelector('.carousel');
+let isDown = false;
 let startX;
 let scrollLeft;
 
+// Evento de mouse (para desktops)
 carousel.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    carousel.classList.add('active');
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = track.offsetLeft;
+  isDown = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
 });
 
 carousel.addEventListener('mouseleave', () => {
-    isDragging = false;
-    carousel.classList.remove('active');
+  isDown = false;
 });
 
 carousel.addEventListener('mouseup', () => {
-    isDragging = false;
-    carousel.classList.remove('active');
+  isDown = false;
 });
 
 carousel.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2; // Ajuste a velocidade do arraste
-    track.style.transform = `translateX(${scrollLeft + walk}px)`;
+  if (!isDown) return; // Se o botão do mouse não está pressionado
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 3; // Multiplica a distância para acelerar o movimento
+  carousel.scrollLeft = scrollLeft - walk;
 });
+
+// Eventos de toque (para dispositivos móveis)
+carousel.addEventListener('touchstart', (e) => {
+  isDown = true;
+  startX = e.touches[0].pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener('touchend', () => {
+  isDown = false;
+});
+
+carousel.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.touches[0].pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 3;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
 
 
 
