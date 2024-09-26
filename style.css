@@ -130,14 +130,15 @@
     width: 100%;
     margin: 0 auto;
     padding: 30px;
-    cursor: grab; /* Estilo de cursor que indica arrastamento */
+    cursor: grab; 
 }
 
 .carousel-track {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas por padrão em telas maiores */
     gap: 20px;
-    transition: transform 0.3s ease; /* Suave transição para o movimento */
-    will-change: transform; /* Otimiza o desempenho do arrastamento */
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .carousel-track a {
@@ -295,20 +296,19 @@
 
     .carousel {
     display: flex;
-    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+    overflow-x: auto; 
     scroll-behavior: smooth;
     }
   
       .carousel-item {
-    min-width: 200px; /* Tamanho mínimo para os cards */
+    min-width: 200px; 
     margin: 0 10px;
-    user-select: none; /* Evita que o texto seja selecionado */
+    user-select: none; 
     }
   
 
     .carousel-track {
-        flex-wrap: nowrap;
-        justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .carousel-track a {
