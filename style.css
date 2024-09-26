@@ -134,11 +134,10 @@
 }
 
 .carousel-track {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 colunas por padrão em telas maiores */
+    display: flex;
     gap: 20px;
-    transition: transform 0.3s ease;
-    will-change: transform;
+    transition: transform 0.3s ease; 
+    will-change: transform; 
 }
 
 .carousel-track a {
@@ -308,14 +307,26 @@
   
 
     .carousel-track {
-        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 colunas por padrão em telas maiores */
+        gap: 20px;
+        transition: transform 0.3s ease;
+        will-change: transform;
     }
-
+    
     .carousel-track a {
-        min-width: 80px;
-        margin: 5px;
-        width: 90px; 
-        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        width: 120px;
+        height: 120px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .carousel-track img {
@@ -323,7 +334,7 @@
     }
 
     .carousel-item {
-        min-width: 150px; /* Reduz o tamanho dos cards em telas pequenas */
+        min-width: 150px; 
     }
 
     .instagram {
