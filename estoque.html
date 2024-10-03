@@ -313,16 +313,69 @@ img {
 </head>
 <body>
     <header class="header">
-        <nav class="nav container">
-            <a href="/index.html" class="nav__logo" style="font-family: var(--body-font);">INDI<span style="color: rgba(241, 191, 24, 0.952); font-family: var(--body-font);">CAR</span></a>
-        </nav>
+        <section class="nav-bar" style="background-color: rgba(0, 0, 0, 0.959);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            height: 80px;
+            position: relative;">
+            <div class="logo" style=" max-height: 60px;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            width: 100%; ">
+            <a href="/index.html" >  <img src="/img/logoIndicar.png" alt="Logo" style="min-height: 40px; 
+                max-height: 40px; 
+                height: auto;
+                width: auto;
+                margin-left: 0%;"> </a>
+               
+            </div>
+        </section>
+
     </header>
     <main class="container">
-        <section class="cards-container" style="margin-top: 5rem;">
+        <section class="cards-container" style="margin-top: 8rem;">
 
-           
-            
-              
+
+            <div class="card" data-brand="Fiat ">                  
+                <div class="card-title">
+                    <img src="img/fiat.png" alt="Logo">
+                    <h3>STRADA WORKING CD 2013 </h3>
+                </div>
+                <img src="img/stradaVermelho/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('STRADA WORKING CD 1.4 ', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo:2013/2013  <br>⛽ Combustível: FLEX<br>', ['img/stradaVermelho/2.jpeg',
+                 'img/stradaVermelho/2.jpeg', 'img/stradaVermelho/3.jpeg', 'img/stradaVermelho/4.jpeg', 'img/stradaVermelho/5.jpeg', 'img/stradaVermelho/6.jpeg',
+                  'img/stradaVermelho/7.jpeg', 'img/stradaVermelho/8.jpeg', 'img/stradaVermelho/9.jpeg', 'img/stradaVermelho/10.jpeg' ])">Saiba Mais</button>
+            </div>
+
+
+
+            <div class="card" data-brand="Citroën">                  
+                <div class="card-title">
+                    <img src="img/citroen.png" alt="Logo">
+                    <h3> C4 CACTUS 2022</h3>
+                </div>
+                <img src="img/c4Branco/11.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('C4 CACTUS FEEL ', '🚘 Modelo: 1.6 AUTOMÁTICO <br>🗓 Ano/ modelo: 2021/2022  <br>⛽ Combustível: flex <br>', ['img/c4Branco/22.jpeg',
+                'img/c4Branco/33.jpeg','img/c4Branco/44.jpeg','img/c4Branco/5.jpeg', 'img/c4Branco/4.jpeg', 'img/c4Branco/3.jpeg',
+                'img/c4Branco/6.jpeg', 'img/c4Branco/7.jpeg'])">Saiba Mais</button>
+            </div>
+
+
+            <div class="card" data-brand="Honda">                  
+                <div class="card-title">
+                    <img src="img/honda.png" alt="Logo">
+                    <h3>CIVIC EX 2017 </h3>
+                </div>
+                <img src="img/civicPreto/1.jpeg" alt="Car Image 1">
+                <button onclick="openPopup('CIVIC EX ', '🚘 Modelo: 2.0 AUTOMÁTICO <br>🗓 Ano/ modelo: 2017/2017 <br>⛽ Combustível: Flex <br>', ['img/civicPreto/2.jpeg',
+                'img/civicPreto/3.jpeg','img/civicPreto/4.jpeg','img/civicPreto/5.jpeg', 'img/civicPreto/6.jpeg', 'img/civicPreto/7.jpeg',
+                'img/civicPreto/8.jpeg', 'img/civicPreto/9.jpeg', 'img/civicPreto/10.jpeg', 'img/civicPreto/11.jpeg'])">Saiba Mais</button>
+            </div>
+  
+                  
             
             <div class="card" data-brand="Citroën">                  
                 <div class="card-title">
@@ -357,19 +410,6 @@ img {
                 <img src="img/kaPlusPrata/1.jpeg" alt="Car Image 1">
                 <button onclick="openPopup(' KA SE PLUS ', '🚘 Modelo: 1.5 MANUAL COM MULTIMÍDIA <br>🗓 Ano/ modelo: 2020/2021 <br>⛽ Combustível: Flex <br>', ['img/kaPlusPrata/2.jpeg',
                 'img/kaPlusPrata/3.jpeg','img/kaPlusPrata/4.jpeg','img/kaPlusPrata/5.jpeg', 'img/kaPlusPrata/6.jpeg', 'img/kaPlusPrata/7.jpeg','img/kaPlusPrata/8.jpeg'])">Saiba Mais</button>
-            </div>
-
-
-
-            <div class="card" data-brand="Honda">                  
-                <div class="card-title">
-                    <img src="img/honda.png" alt="Logo">
-                    <h3>CIVIC EX 2017 </h3>
-                </div>
-                <img src="img/civicPreto/1.jpeg" alt="Car Image 1">
-                <button onclick="openPopup('CIVIC EX ', '🚘 Modelo: 2.0 AUTOMÁTICO <br>🗓 Ano/ modelo: 2017/2017 <br>⛽ Combustível: Flex <br>', ['img/civicPreto/2.jpeg',
-                'img/civicPreto/3.jpeg','img/civicPreto/4.jpeg','img/civicPreto/5.jpeg', 'img/civicPreto/6.jpeg', 'img/civicPreto/7.jpeg',
-                'img/civicPreto/8.jpeg', 'img/civicPreto/9.jpeg', 'img/civicPreto/10.jpeg', 'img/civicPreto/11.jpeg'])">Saiba Mais</button>
             </div>
 
 
@@ -457,19 +497,6 @@ img {
                 <img src="img/preparacao.jpeg" alt="Car Image 1">
                 <button onclick="openPopup(' CRUZE LT ', '🚘 Modelo: 1.8 AUTOMÁTICO <br>  ⭕ Cor: PRATA <br>🗓 Ano/ modelo: 2012/2012 <br>⛽ Combustível: flex <br>', ['img/preparacao.jpeg'])">Saiba Mais</button>
             </div>
-
-            <div class="card" data-brand="Citroën">                  
-                <div class="card-title">
-                    <img src="img/citroen.png" alt="Logo">
-                    <h3> C4 CACTUS 2022</h3>
-                </div>
-                <img src="img/c4Branco/11.jpeg" alt="Car Image 1">
-                <button onclick="openPopup('C4 CACTUS FEEL ', '🚘 Modelo: 1.6 AUTOMÁTICO <br>🗓 Ano/ modelo: 2021/2022  <br>⛽ Combustível: flex <br>', ['img/c4Branco/22.jpeg',
-                'img/c4Branco/33.jpeg','img/c4Branco/44.jpeg','img/c4Branco/5.jpeg', 'img/c4Branco/4.jpeg', 'img/c4Branco/3.jpeg',
-                'img/c4Branco/6.jpeg', 'img/c4Branco/7.jpeg'])">Saiba Mais</button>
-            </div>
-
-
 
             <div class="card" data-brand="Fiat">                  
                 <div class="card-title">
@@ -655,18 +682,7 @@ img {
             </div>
 
 
-            <div class="card" data-brand="Fiat ">                  
-                <div class="card-title">
-                    <img src="img/fiat.png" alt="Logo">
-                    <h3>STRADA WORKING CD 2013 </h3>
-                </div>
-                <img src="img/stradaVermelho/1.jpeg" alt="Car Image 1">
-                <button onclick="openPopup('STRADA WORKING CD 1.4 ', '🚘 Modelo: 1.0 MANUAL <br>🗓 Ano/ modelo:2013/2013  <br>⛽ Combustível: FLEX<br>', ['img/stradaVermelho/2.jpeg',
-                 'img/stradaVermelho/2.jpeg', 'img/stradaVermelho/3.jpeg', 'img/stradaVermelho/4.jpeg', 'img/stradaVermelho/5.jpeg', 'img/stradaVermelho/6.jpeg',
-                  'img/stradaVermelho/7.jpeg', 'img/stradaVermelho/8.jpeg', 'img/stradaVermelho/9.jpeg', 'img/stradaVermelho/10.jpeg' ])">Saiba Mais</button>
-            </div>
-
-
+            
             <div class="card" data-brand="fiat">                  
                 <div class="card-title">
                     <img src="img/fiat.png" alt="Logo">
