@@ -17,7 +17,7 @@
 
 
 .nav-bar {
-    background-color: rgba(0, 0, 0, 0.959);
+    background-color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,9 +29,9 @@
 
 
 .nav-bar .logo {
-    max-height: 60px;
+    max-height: 200px;
     display: flex;
-    justify-content: center; 
+    justify-content:left ; 
     align-items: center;
     width: 100%; 
     
@@ -39,11 +39,11 @@
 
 
 .nav-bar .logo img {
-    min-height: 40px; 
-    max-height: 40px; 
+    min-height: 80px; 
+    max-height: 80px; 
     height: auto;
     width: auto;
-    margin-left: 30%;
+    margin-left: 2%;
     
 }
 
